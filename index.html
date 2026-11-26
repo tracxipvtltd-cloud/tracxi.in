@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#fdfcf8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+  <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tracxi" />
+  <meta property="og:title" content="Tracxi — One Company. Multiple Products. One Vision." />
+  <meta property="og:description" content="The parent company behind Tracxi by Suresh B, Tracxi 2.0, VCX Mart, Trackspense, Magic Matrix, Wah Mahi Ring, Tracxi Learn, SkillForge, and Vision AI." />
+  <meta property="og:image" content="https://res.cloudinary.com/dfisnbg4l/image/upload/v1795631828/657f5924-f124-48e5-8a7d-c85abc68a415.png" />
+  <meta property="og:url" content="https://tracxi.in" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@tracxi" />
+  <meta name="twitter:title" content="Tracxi — One Company. Multiple Products. One Vision." />
+  <meta name="twitter:description" content="The parent company behind Tracxi by Suresh B, Tracxi 2.0, VCX Mart, Trackspense, Magic Matrix, Wah Mahi Ring, Tracxi Learn, SkillForge, and Vision AI." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dfisnbg4l/image/upload/v1795631828/657f5924-f124-48e5-8a7d-c85abc68a415.png" />
+
+  <!-- SEO -->
+  <meta name="description" content="Tracxi parent company — One Company. Multiple Products. One Vision. Discover our ecosystem of products spanning logistics, commerce, finance, learning, and technology." />
+  <meta name="keywords" content="Tracxi, logistics, commerce, finance, education, technology, AI, parent company" />
+  <meta name="author" content="Tracxi" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tracxi.in" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Performance hints -->
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dfisnbg4l/image/upload/v1795631828/657f5924-f124-48e5-8a7d-c85abc68a415.png" />
+
+  <title>Tracxi — One Company. Multiple Products. One Vision.</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+
+  <!-- No-script fallback -->
+  <noscript>
+    <div style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #fdfcf8;
+      color: #0f0f0f;
+    ">
+      <h1 style="margin: 0 0 1rem; font-size: 2rem;">JavaScript Required</h1>
+      <p style="margin: 0 0 1.5rem; max-width: 400px; color: #525252;">
+        This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.
+      </p>
+      <a href="https://www.enable-javascript.com/" target="_blank" rel="noopener" style="
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: #0f0f0f;
+        color: #fdfcf8;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: 500;
+      ">
+        Learn how to enable JavaScript
+      </a>
+    </div>
+  </noscript>
+
+  <!-- Script to detect WebGL support early -->
+  <script>
+    (function() {
+      try {
+        var canvas = document.createElement('canvas');
+        var gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+        if (gl) {
+          document.documentElement.classList.add('webgl-supported');
+        } else {
+          document.documentElement.classList.add('webgl-unsupported');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('webgl-unsupported');
+      }
+
+      // Detect reduced motion preference
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('reduce-motion');
+      }
+
+      // Detect dark mode preference
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('prefers-dark');
+      }
+    })();
+  </script>
+</body>
+</html>

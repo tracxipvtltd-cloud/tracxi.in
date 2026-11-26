@@ -1,0 +1,34 @@
+/**
+ * SkillForge Section Styles
+ * Product section with 3D scene and special transition text
+ */
+
+@import '../styles/design-tokens.css';
+
+/* Inherits from product section base styles */
+
+.skillforge-transition {
+  margin: var(--space-8) 0;
+  padding: var(--space-6);
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.skillforge-transition p {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  font-style: italic;
+  color: var(--color-accent-primary);
+  text-align: center;
+  margin: 0;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .skillforge-transition p {
+    font-size: var(--text-base);
+  }
+}

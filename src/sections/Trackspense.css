@@ -1,0 +1,148 @@
+@import '../styles/design-tokens.css';
+
+#trackspense.tracxi-section {
+  --chapter-text: #17150f;
+  --chapter-muted: #5b554a;
+  --chapter-line: rgba(23, 21, 15, 0.16);
+  --chapter-accent: #8a7a52;
+  min-height: 100svh;
+  background: #f6f1e7;
+  color: #17150f;
+  overflow: hidden;
+}
+
+.trk-shell {
+  position: relative; z-index: 10;
+  min-height: 100svh;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: clamp(6.5rem, 10vw, 8.5rem) var(--section-padding-x) clamp(2.5rem, 4vw, 3.5rem);
+  display: flex; flex-direction: column;
+}
+.trk-topline { color: #6b6457; margin-bottom: auto; }
+
+.trk-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+}
+.trk-copy { max-width: 36rem; }
+.trk-copy .p-title { font-size: clamp(3.6rem, 7.8vw, 7.2rem); }
+.trk-copy .p-title em { color: #8a7a52; }
+
+.trk-visual { position: relative; min-height: 560px; }
+.trk-circle {
+  position: absolute; left: 50%; top: 48%;
+  width: min(36vw, 500px); height: min(36vw, 500px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 252, 244, 0.95) 0%, rgba(240, 232, 218, 0.4) 55%, transparent 72%);
+}
+.trk-ring {
+  position: absolute; left: 50%; top: 48%;
+  width: min(31vw, 430px); height: min(31vw, 430px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(23, 21, 15, 0.1);
+}
+.trk-wallet {
+  position: absolute; left: 50%; top: 50%;
+  width: 340px; height: 220px;
+  transform: translate(-50%, -50%);
+}
+.trk-wallet-back {
+  position: absolute; left: 6%; right: 6%; bottom: 2%; height: 74%;
+  background: #17150f; border-radius: 12px;
+  box-shadow: 0 34px 70px rgba(23, 21, 15, 0.22);
+}
+.trk-wallet-body {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 68%;
+  background: linear-gradient(160deg, #3b3f45 0%, #23262b 60%, #1a1c20 100%);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 30px 60px rgba(23, 21, 15, 0.2);
+}
+.trk-wallet-flap {
+  position: absolute; left: 0; right: 0; top: 22%; height: 42%;
+  background: linear-gradient(160deg, #4a4f56, #2a2e34);
+  border-radius: 12px 12px 4px 4px;
+  transform-origin: top;
+  transform: rotateX(14deg);
+}
+.trk-card {
+  position: absolute; top: 6%; width: 62%; height: 34%;
+  border-radius: 7px;
+  box-shadow: 0 14px 30px rgba(23, 21, 15, 0.16);
+}
+.trk-card-a { left: 8%; background: linear-gradient(135deg, #dbe1e6 0%, #aeb8c2 60%, #929da8 100%); transform: rotate(-7deg); }
+.trk-card-b { right: 8%; background: linear-gradient(135deg, #e6d7ae 0%, #c8b05e 55%, #a98d4d 100%); transform: rotate(6deg); }
+.trk-wallet-mark {
+  position: absolute; right: 8%; bottom: 14%;
+  font-family: var(--font-display); font-size: 2.4rem; line-height: 1;
+  color: rgba(247, 243, 234, 0.2);
+}
+.trk-coin {
+  position: absolute;
+  display: grid; place-items: center;
+  width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(160deg, #efe2bc 0%, #d4c07a 45%, #a98d4d 100%);
+  color: #5a4a1a; font-family: var(--font-sans); font-size: 1.3rem; font-weight: 600;
+  box-shadow: 0 14px 30px rgba(169, 141, 77, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.trk-coin-a { right: 12%; top: 18%; }
+.trk-coin-b { right: 5%; top: 34%; width: 46px; height: 46px; font-size: 1rem; opacity: 0.9; }
+.trk-coin-c { left: 10%; bottom: 22%; width: 52px; height: 52px; font-size: 1.05rem; }
+.trk-receipt {
+  position: absolute; right: 2%; bottom: 14%;
+  width: 150px; height: 190px;
+  background: #fdfcf8;
+  border: 1px solid rgba(23, 21, 15, 0.08);
+  box-shadow: 0 20px 44px rgba(23, 21, 15, 0.08);
+  transform: rotate(4deg);
+  padding: 1rem;
+}
+.trk-receipt-mark { font-family: var(--font-display); font-size: 2.2rem; color: rgba(23, 21, 15, 0.22); line-height: 1; }
+.trk-receipt-line { display: block; height: 1px; background: rgba(23, 21, 15, 0.12); margin-top: 0.7rem; }
+.trk-line-a { width: 80%; margin-top: 1.1rem; }
+.trk-line-b { width: 62%; }
+.trk-line-c { width: 72%; }
+.trk-line-d { width: 48%; }
+.trk-annotation { position: absolute; color: #7b7365; }
+.trk-annotation-a { left: 6%; top: 18%; }
+.trk-annotation-b { left: 4%; bottom: 12%; }
+
+.trk-foot {
+  display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem;
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(23, 21, 15, 0.14);
+  color: #6b6457;
+  margin-top: auto;
+}
+.trk-foot .micro { position: relative; padding-left: 0.8rem; }
+.trk-foot .micro::before { content: ''; position: absolute; left: 0; top: 0.35em; width: 4px; height: 4px; border-radius: 50%; background: #8a7a52; }
+.trk-foot-right { margin-left: auto; }
+
+@media (max-width: 900px) {
+  .trk-layout { grid-template-columns: 1fr; gap: 1rem; }
+  .trk-copy { max-width: 100%; }
+  .trk-visual { min-height: 430px; }
+  .trk-wallet { transform: translate(-50%, -50%) scale(0.9); }
+  .trk-circle, .trk-ring { width: 360px; height: 360px; }
+  .trk-foot { margin-top: 1.5rem; }
+}
+@media (max-width: 600px) {
+  #trackspense.tracxi-section, .trk-shell { min-height: auto; }
+  .trk-shell { padding: 5.5rem var(--space-5) 2.5rem; }
+  .trk-copy .p-title { font-size: clamp(3rem, 13vw, 4.6rem); }
+  .trk-visual { min-height: 340px; }
+  .trk-wallet { transform: translate(-50%, -50%) scale(0.68); }
+  .trk-circle, .trk-ring { width: 300px; height: 300px; }
+  .trk-coin-a { right: 8%; top: 10%; }
+  .trk-coin-b { right: 2%; top: 26%; }
+  .trk-coin-c { left: 4%; bottom: 12%; }
+  .trk-receipt { right: 0; bottom: 4%; transform: rotate(4deg) scale(0.8); transform-origin: bottom right; }
+  .trk-annotation { display: none; }
+  .trk-foot { gap: 0.75rem 1.25rem; }
+  .trk-foot-right { margin-left: 0; width: 100%; }
+}

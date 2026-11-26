@@ -1,0 +1,205 @@
+/**
+ * Closing Section Styles
+ * Final cinematic closing experience
+ */
+
+@import '../styles/design-tokens.css';
+
+/* ============================================
+   CLOSING SECTION
+   ============================================ */
+.closing-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Canvas */
+.closing-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.closing-scene-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.closing-core {
+  width: 120px;
+  height: 120px;
+  border: 1px solid var(--color-silver-400);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: corePulse 4s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.5;
+  }
+}
+
+/* Content */
+.closing-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-8) var(--section-padding-x);
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+}
+
+.closing-logo {
+  margin-bottom: var(--space-8);
+  opacity: 0.9;
+}
+
+.closing-logo img {
+  width: 140px;
+  height: auto;
+}
+
+.closing-header {
+  margin-bottom: var(--space-8);
+}
+
+.closing-header .section-title {
+  font-size: var(--text-5xl);
+  max-width: 800px;
+}
+
+.closing-header .section-description {
+  font-size: var(--text-xl);
+  max-width: 600px;
+}
+
+/* Statement */
+.closing-statement {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .closing-header .section-title {
+    font-size: var(--text-4xl);
+  }
+
+  .closing-header .section-description {
+    font-size: var(--text-lg);
+  }
+
+  .closing-logo img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .closing-content {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .closing-header .section-title {
+    font-size: var(--text-3xl);
+  }
+
+  .closing-header .section-description {
+    font-size: var(--text-base);
+  }
+
+  .closing-logo img {
+    width: 100px;
+  }
+
+  .closing-statement {
+    font-size: var(--text-base);
+  }
+
+  .closing-core {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .closing-header .section-title {
+    font-size: var(--text-2xl);
+  }
+
+  .closing-header .section-description {
+    font-size: var(--text-sm);
+  }
+
+  .closing-logo {
+    margin-bottom: var(--space-6);
+  }
+
+  .closing-logo img {
+    width: 80px;
+  }
+
+  .closing-statement {
+    font-size: var(--text-sm);
+  }
+
+  .closing-core {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .closing-core {
+    animation: none !important;
+    opacity: 0.4;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST
+   ============================================ */
+@media (prefers-contrast: high) {
+  .closing-core {
+    border-width: 2px;
+  }
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+@media print {
+  .closing-section {
+    min-height: auto;
+    page-break-inside: avoid;
+  }
+
+  .closing-canvas {
+    display: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+/**
+ * Tracxi Styles Entry Point
+ * Imports all global styles and design tokens
+ */
+
+@import './global.css';

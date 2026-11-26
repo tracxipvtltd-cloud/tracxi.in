@@ -1,0 +1,196 @@
+/**
+ * Tracxi Scene Styles
+ * Styles for 3D scene components and loading/error states
+ */
+
+@import '../../styles/design-tokens.css';
+
+/* ============================================
+   SCENE WRAPPER
+   ============================================ */
+.scene-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tracxi-scene {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================
+   LOADING OVERLAY
+   ============================================ */
+.scene-loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--canvas-bg);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.scene-loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--color-text-tertiary);
+  pointer-events: auto;
+}
+
+.loading-ring {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.loading-ring-inner {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-top-color: var(--color-accent-primary);
+  border-right-color: var(--color-accent-primary);
+  border-radius: 50%;
+  animation: ringSpin 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes ringSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.scene-loading-content p {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* ============================================
+   ERROR OVERLAY
+   ============================================ */
+.scene-error-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-tertiary);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.scene-error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--color-text-secondary);
+  pointer-events: auto;
+}
+
+.scene-error-content p {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.error-hint {
+  font-size: var(--text-sm) !important;
+  color: var(--color-text-tertiary) !important;
+}
+
+/* ============================================
+   SCENE TRANSITION
+   ============================================ */
+.scene-transition-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.scene-transition-mask {
+  position: absolute;
+  inset: 0;
+  background: var(--canvas-bg);
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-out);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .scene-loading-content {
+    padding: var(--space-6);
+    gap: var(--space-3);
+  }
+
+  .loading-ring {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scene-error-content {
+    padding: var(--space-6);
+  }
+
+  .scene-error-content p {
+    font-size: var(--text-sm);
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .loading-ring-inner {
+    animation: none;
+    border-top-color: var(--color-border-default);
+    border-right-color: var(--color-border-default);
+  }
+
+  .scene-transition-mask {
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST
+   ============================================ */
+@media (prefers-contrast: high) {
+  .scene-loading-overlay {
+    border: 2px solid currentColor;
+  }
+
+  .scene-error-overlay {
+    border: 2px solid currentColor;
+  }
+
+  .loading-ring-inner {
+    border-width: 3px;
+  }
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+@media print {
+  .scene-wrapper,
+  .scene-loading-overlay,
+  .scene-error-overlay,
+  .scene-transition-overlay {
+    display: none !important;
+  }
+}
